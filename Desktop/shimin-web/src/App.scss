@@ -9,6 +9,7 @@ $imageWidthMobile: 15px;
 $fontSizeTitle: 100px;
 $fontSizeMobileTitle: 50px;
 $fontSize: 7vw;
+$fontSizeSmall: 25px;
 $fontSizeMobile: 2vw;
 
 .app {
@@ -63,6 +64,11 @@ $fontSizeMobile: 2vw;
         align-items: center;
         font-size: $fontSize;
         color: $coffeeBrown;
+
+        h1 {
+          font-family: 'Amatic SC', cursive;
+          font-size: $fontSizeSmall;
+        }
 
         @include mobile {
           h1 {

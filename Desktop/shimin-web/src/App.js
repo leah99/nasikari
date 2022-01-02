@@ -22,7 +22,7 @@ function App() {
           <span className="app__myProjects__items__title">
             <span>Work In Progress</span>
             <span className="app__myProjects__items__title__subtitle">
-              <h1>Meanwhile, check out my LinkedIn!</h1>
+              <h1>Meanwhile, do check out my LinkedIn!</h1>
               <a href='https://www.linkedin.com/in/shi-min-low-8a09591bb/'><img className="app__myProjects__items__title__subtitle__image" src={linkedin} alt=''/></a>
             </span>
           </span>
