@@ -1,0 +1,30 @@
+@import '../../styles/shared/index.scss';
+
+$elementWidth: 50px;
+$elementHeight: 50px;
+$elementWidthTablet: 35px;
+$elementHeightTablet: 35px;
+$elementWidthMobile: 25px;
+$elementHeightMobile: 25px;
+
+.scrollButton {
+    position: fixed;
+    width: $elementWidth;
+    height: $elementHeight;
+    left: 95%;
+    bottom: 5%;
+    z-index: 1;
+    cursor: pointer;
+
+    @include tablet {
+        width: $elementWidthTablet;
+        height: $elementHeightTablet;
+        left: 93%;
+    }
+
+    @include mobile {
+        width: $elementWidthMobile;
+        height: $elementHeightMobile;
+        left: 86%;
+    }
+}

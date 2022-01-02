@@ -1,0 +1,47 @@
+@import '../../styles/shared/index.scss';
+
+$fontSize: 100px;
+$fontSizeMobile: 50px;
+
+.aboutMe {
+  @include displayFlex();
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  color: $darkBrown;
+
+  &__header {
+    font-family: 'Amatic SC', cursive;
+    font-size: $fontSize;
+
+    @include mobile {
+        font-size: $fontSizeMobile;
+    }
+  }
+
+  &__description {
+    @include displayFlex();
+    flex-direction: row;
+    width: 90%;
+
+    @include mobile {
+      flex-direction: column;
+      width: 80%;
+    }
+
+    ul {
+      list-style-type: none;
+      margin-block-start: unset;
+      margin-block-end: unset;
+      padding-inline-start: unset;
+      padding: $common-space;
+      width: 100%;
+
+      @include mobile {
+        padding: $common-space/2;
+      }
+    }
+  }
+}
+

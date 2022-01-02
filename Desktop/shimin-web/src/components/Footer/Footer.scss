@@ -1,0 +1,37 @@
+@import '../../styles/shared/index.scss';
+
+$elementHeight: 80px;
+$imageWidth: 13px;
+$fontSizeMobile: 10px;
+
+.footer {
+    @include displayFlex();
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: $lightBrown;
+    color: $offWhite;
+    height: $elementHeight;
+    font-family: 'Darker Grotesque', sans-serif;
+    
+    @include mobile {
+        font-size: $fontSizeMobile;
+        height: $elementHeight/1.5;
+    }
+
+    &__copyright {
+        margin-top: 3px;
+        @include displayFlex();
+        align-self: center;
+        width: $imageWidth;
+        margin-right: $common-space/3;
+
+        @include mobile {
+            margin-right: $common-space/4;
+        }
+    }
+}

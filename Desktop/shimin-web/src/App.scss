@@ -1,0 +1,96 @@
+@import 'styles/shared/index';
+
+$elementMaxWidth: 50vw;
+$elementMaxWidthMobile: 100vw;
+$imageWidth: 30px;
+$imageWidthTablet: 20px;
+$imageWidthMobile: 15px;
+
+$fontSizeTitle: 100px;
+$fontSizeMobileTitle: 50px;
+$fontSize: 7vw;
+$fontSizeMobile: 2vw;
+
+.app {
+  text-align: center;
+
+  &__aboutMe {
+  }
+
+  &__myProjects {
+    @include displayFlex();
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Amatic SC', cursive;
+
+    &__title {
+      margin-top: $common-space;
+      color: $darkBrown;
+      font-size: $fontSizeTitle;
+      @include mobile {
+        font-size: $fontSizeMobileTitle;
+      }
+    }
+
+
+    &__items {
+      @include displayFlex();
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      padding: $common-space;
+      
+
+      @include mobile {
+          flex-direction: column;
+          padding: $common-space/2;
+          
+      }
+
+      &__image {
+        max-width: $elementMaxWidth;
+        @include mobile {
+          max-width: $elementMaxWidthMobile;
+        }
+      }
+
+      &__title {
+        @include displayFlex();
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: $fontSize;
+        color: $coffeeBrown;
+
+        @include mobile {
+          h1 {
+            font-size: $fontSizeMobile;
+          }
+        }
+
+        &__subtitle { 
+          @include displayFlex();
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+
+          &__image {
+            @include displayFlex();
+            align-self: center;
+            width: $imageWidth;
+            margin-left: $common-space/2;
+            @include tablet {
+              width: $imageWidthTablet;
+            }
+            @include mobile {
+              width: $imageWidthMobile;
+              margin-left: $common-space/4;
+            }
+          }
+        }
+      }
+    }
+  }
+}

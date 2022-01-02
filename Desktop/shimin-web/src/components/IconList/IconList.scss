@@ -1,0 +1,55 @@
+@import '../../styles/shared/index.scss';
+
+$elementMaxWidth: 35px;
+$elementMaxHeight: 35px;
+$elementMaxWidthTablet: 25px;
+$elementMaxHeightTablet: 25px;
+$elementMaxWidthMobile: 20px;
+$elementMaxHeightMobile: 20px;
+$tabletFontSize: 20px;
+
+.iconList {
+    
+    li {
+        list-style-type: none;
+        @include displayFlex();
+        flex-direction: row;
+    }
+
+    &__image {
+        @include displayFlex();
+        justify-content: center;
+        align-items: center;
+        max-width: $elementMaxWidth;
+        max-height: $elementMaxHeight;
+
+        @include tablet {
+            max-width: $elementMaxWidthTablet;
+            max-height: $elementMaxHeightTablet;
+        }
+
+        @include mobile {
+            max-width: $elementMaxWidthMobile;
+            max-height: $elementMaxHeightMobile;
+        }
+    }
+
+    &__description {
+        margin-left: $common-space/2;
+        @include displayFlex();
+        align-items: center;
+        text-align: left;
+
+        @include tablet {
+            font-size: $tabletFontSize;
+        }
+
+        @include mobile {
+            margin-left: $common-space/4;
+        }
+    }
+
+    + .iconList {
+        margin-top: $common-space;
+    }
+}

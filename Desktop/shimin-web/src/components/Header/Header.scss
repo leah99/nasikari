@@ -1,0 +1,27 @@
+@import '../../styles/shared/index.scss';
+
+.header {
+  @include displayFlex();
+  width: 100%;
+
+  &__unordered-list {
+    list-style-type: none;
+    margin: 0;
+    padding: $common-space;
+    width: 100%;
+    @include displayFlex();
+    justify-content: flex-end;
+
+    li {
+      &:hover {
+        color: $delicateBrown;
+        cursor: pointer;
+        text-decoration: underline;
+      }
+
+      + li {
+        margin-left: 20px;
+      }
+    }
+  }
+}

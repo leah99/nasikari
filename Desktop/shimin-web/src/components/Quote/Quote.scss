@@ -1,0 +1,56 @@
+@import '../../styles/shared/index.scss';
+
+$elementWidth: 50px;
+$elementHeight: 50px;
+$elementWidthTablet: 40px;
+$elementHeightTablet: 40px;
+$elementWidthMobile: 20px;
+$elementHeightMobile: 20px;
+$fontSize: 25px;
+$fontSizeMobile: 18px;
+
+.quote {
+    @include displayFlex();
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: $coffeeBrown;
+    padding: $common-space $common-space*2 $common-space*2 $common-space*2;
+    font-size: $fontSize;
+
+    @include mobile {
+        padding: $common-space/2 $common-space $common-space $common-space;
+        font-size: $fontSizeMobile;
+    }
+
+    &__description {
+        padding: $common-space;
+
+        @include mobile {
+            padding: $common-space/2;
+        }
+    }
+
+    &__openQuotation, &__closeQuotation {
+        width: $elementWidth;
+        height: $elementHeight;
+
+        @include tablet {
+            width: $elementWidthTablet;
+            height: $elementHeightTablet;
+        }
+    
+        @include mobile {
+            width: $elementWidthMobile;
+            height: $elementHeightMobile;
+        }
+    }
+
+    &__openQuotation {
+        align-self: flex-start;
+    }
+
+    &__closeQuotation {
+        align-self: flex-end;
+    }
+}

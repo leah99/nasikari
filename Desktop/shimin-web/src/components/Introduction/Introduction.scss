@@ -1,0 +1,115 @@
+@import '../../styles/shared/index.scss';
+
+$elementWidth: 80px;
+$elementWidthMobile: 40px; 
+$fontSizeSayHi: 30px;
+$fontSizeSayHiMobile: 20px;
+$svgWidth: 80vw;
+$svgWidthMobile: 100vw;
+$svgHeight: 40px;
+$fontSizeDefault: 35px;
+$fontSizeMobile: 20px;
+
+.introduction {
+  padding-top: $common-space;
+  @include displayFlex();
+  align-items: center;
+
+  @include mobile {
+    width: 100vw;
+    flex-direction: column;
+  }
+
+  &__item-container {
+    width: 50%;
+    padding: unset;
+    @include displayFlex();
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+
+    @include mobile {
+      width: 100%;
+    }
+
+    a {
+      margin-top: 10%;
+      display: block;
+      align-items: center;
+      width: $elementWidth;
+      font-family: 'Amatic SC', cursive;
+      font-size: $fontSizeSayHi;
+      background-color: $yellow;
+      color: $offWhite;
+      text-decoration: none;
+
+      @include mobile {
+        margin-top: 5%;
+        font-size: $fontSizeSayHiMobile;
+        width: $elementWidthMobile;
+      }
+    }
+
+    &__svg {
+      width: $svgWidth;
+      height: $svgHeight;
+      
+      @include tablet {
+        height: unset;
+      }
+
+      @include mobile {
+        margin-top: $common-space*1.5;
+        width: $svgWidthMobile;
+        height: unset;
+      }
+    }
+
+    &__subwords {
+      margin-bottom: -$common-space*3.5;
+      padding: $common-space*1.5;
+      font-size: $fontSizeDefault;
+      font-family: 'Amatic SC', cursive;
+      color: $coffeeBrown;
+
+      @include tablet {
+        margin-bottom: -$common-space*2;
+      }
+
+      @include mobile {
+        padding: $common-space*1.5 0;
+        margin-bottom: -$common-space*2;
+        font-size: $fontSizeMobile;
+      }
+    }
+  }
+
+  &__image {
+    width: 50%;
+
+    @include mobile {
+      width: 100%;
+      margin-top: $common-space;
+    }
+  }
+}
+
+svg {
+  @include displayFlex();
+  overflow: unset;
+  path {
+    stroke-dasharray: 10000;
+    stroke-dashoffset: 0;
+    animation: dash 1s linear alternate infinite;
+  }
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 10000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}

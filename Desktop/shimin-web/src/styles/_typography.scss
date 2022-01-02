@@ -1,0 +1,36 @@
+@import '../styles/shared/variables';
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Acme&family=Amatic+SC:wght@400;700&family=Bellefair&family=Darker+Grotesque:wght@400&family=Indie+Flower&family=Oranienbaum&family=Pacifico&family=Sacramento&display=swap');
+
+h1 {
+	font-size: $header-font-size;
+    font-family: 'Oranienbaum', Helvetica, serif;
+}
+
+h2,
+h3 {
+	font-size: $medium-font-size;
+}
+
+h4 { font-size: $default-font-size; }
+
+body,
+p {
+	font-size: $default-font-size;
+	font-family: 'Bellefair', Arial, serif;
+}
+
+small {
+	font-size: $small-font-size;
+}
+
+.signature {
+    font-size: $default-font-size;
+    font-family: 'Sacramento', cursive;
+}
+
+/** Other Font Family */
+// font-family: 'Acme', sans-serif;
+// font-family: 'Amatic SC', cursive;
+// font-family: 'Darker Grotesque', sans-serif;
+// font-family: 'Indie Flower', cursive;
+// font-family: 'Pacifico', cursive;
