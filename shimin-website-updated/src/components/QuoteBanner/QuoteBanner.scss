@@ -1,0 +1,66 @@
+@import '../../styles/shared/index.scss';
+
+.quote-banner {
+    margin-top: calc(25px / var(--size-divisor));
+    @include displayFlex();
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    &__quote {
+        @include displayFlex();
+        flex-direction: column;
+        
+        &__image-top {
+            align-self: flex-end;
+            -ms-transform: rotate(250deg);
+            transform: rotate(250deg);
+            width: calc(200px / var(--size-divisor));
+            height: calc(200px / var(--size-divisor));
+        }
+
+        .quote {
+            padding: 0 calc(150px / var(--size-divisor));
+        }
+
+        &__image-bottom {
+            -ms-transform: rotate(60deg);
+            transform: rotate(60deg);
+            width: calc(200px / var(--size-divisor));
+            height: calc(200px / var(--size-divisor));
+        }
+    }
+
+    &__container {
+        @include displayFlex();
+        flex-direction: row;
+        overflow: visible;
+        justify-content: flex-end;
+        flex: 1 1 auto;
+        width: 50%;
+
+        &__image-top {
+            z-index: 2;
+            margin-top: calc(250px / var(--size-divisor));
+            margin-right: calc(-100px / var(--size-divisor));
+            object-fit: cover;
+            width: calc(200px / var(--size-divisor));
+            height: calc(300px / var(--size-divisor));
+        }
+
+        &__image-middle {
+            z-index: 1;
+            margin-top: calc(100px / var(--size-divisor));
+            margin-right: calc(-350px / var(--size-divisor));
+            object-fit: cover;
+            width: calc(300px / var(--size-divisor));
+            height: calc(350px / var(--size-divisor));
+        }
+
+        span {
+            width: calc(400px / var(--size-divisor));
+            height: calc(350px / var(--size-divisor));
+            background-color: $darkGrayOrange;
+        }
+    }
+}

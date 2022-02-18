@@ -1,0 +1,74 @@
+@import '../../styles/shared/index.scss';
+
+.credits {
+    @include displayFlex();
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    &__container-left {
+        @include displayFlex();
+        flex-direction: row;
+        padding: calc(50px / var(--size-divisor));
+    
+        &__block-left {
+            margin-left: calc(100px / var(--size-divisor));
+            background-color: $darkGrayOrange;
+            width: calc(250px / var(--size-divisor));
+            height: calc(400px / var(--size-divisor));
+        }
+        &__block-middle {
+            margin-top: calc(200px / var(--size-divisor));
+            margin-left: calc(-350px / var(--size-divisor));
+            background-color: $OrangeYellow;
+            width: calc(250px / var(--size-divisor));
+            height: calc(300px / var(--size-divisor));
+        }
+        &__image {
+            margin-top: calc(50px / var(--size-divisor));
+            margin-left: calc(-60px / var(--size-divisor));
+            @include border-radius(calc(400px / var(--size-divisor)) calc(400px / var(--size-divisor)) 0 0);
+            width: calc(250px / var(--size-divisor));
+            height: calc(400px / var(--size-divisor));
+        }
+    }
+
+    &__container-right {
+        @include displayFlex();
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: calc(60px / var(--size-divisor));
+        
+        h2{
+            margin: unset;
+        }
+        p {
+            margin: unset;
+            padding: calc(50px / var(--size-divisor)) calc(100px / var(--size-divisor));
+        }
+
+        a {
+            font-size: 0;
+        }
+        &__icon {
+            @include displayFlex();
+            flex-direction: row;
+            height: 60px;
+            justify-content: center;
+            align-items: center;
+            height: fit-content;
+
+            &__linkedIn {
+                width: calc(30px / var(--size-divisor));
+                height: calc(30px / var(--size-divisor));    
+            }
+            &__email {
+                margin-left: calc(10px / var(--size-divisor));
+                width: calc(27px / var(--size-divisor));
+                height: calc(27px / var(--size-divisor));
+            }
+        }
+
+    }
+}

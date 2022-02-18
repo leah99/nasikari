@@ -1,0 +1,48 @@
+@import '../../styles/shared/index.scss';
+
+$backgroundColor: $cream;
+
+.doughnut-container {
+    @include displayFlex();
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__doughnut {
+        @include displayFlex();
+        align-items: center;
+        justify-content: center;
+
+        border: double calc(2em / var(--size-divisor)) transparent;
+        background-image: linear-gradient($backgroundColor, $backgroundColor), linear-gradient(to bottom, $darkGrayOrange, $brownYellow);
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+        @include border-radius(50%);
+        height: calc(100px / var(--size-divisor));
+        width: calc(100px / var(--size-divisor));
+
+        &--pink {
+            background-image: linear-gradient($backgroundColor, $backgroundColor), linear-gradient(to bottom, $salmon, $ashPink);
+        }
+
+        &--yellow {
+            background-image: linear-gradient($backgroundColor, $backgroundColor), linear-gradient(to bottom, $OrangeYellow, $dullOrange);
+        }
+
+        &--green {
+            background-image: linear-gradient($backgroundColor, $backgroundColor), linear-gradient(to bottom, $dullGrayGreen, $lightGreen);
+        }
+
+        &--blue {
+            background-image: linear-gradient($backgroundColor, $backgroundColor), linear-gradient(to bottom, $teaBlue, $dullBlue);
+        }
+    }
+
+    p {
+        margin: calc(18px / var(--size-divisor)) 0 0 0;
+    }
+
+    +.doughnut-container {
+        margin-left: calc(40px / var(--size-divisor));
+    }
+}

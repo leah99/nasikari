@@ -1,0 +1,28 @@
+@import '../../styles/shared/index.scss';
+
+
+.quote {
+    @include displayFlex();
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: $darkGrayOrange;
+
+    &__description {
+        padding: calc(25px / var(--size-divisor));
+    }
+
+    &__openQuotation, &__closeQuotation {
+        width: calc(20px / var(--size-divisor));
+        height: calc(20px / var(--size-divisor));
+    }
+
+    &__openQuotation {
+        align-self: flex-start;
+        fill: $darkBrown;
+    }
+
+    &__closeQuotation {
+        align-self: flex-end;
+    }
+}

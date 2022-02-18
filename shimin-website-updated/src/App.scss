@@ -1,0 +1,45 @@
+@import 'styles/shared/index';
+
+.app {
+  text-align: center;
+
+  &__aboutMe {
+    @include displayFlex();
+    flex-direction: column;
+
+    h2 {
+      align-self: flex-start;
+      margin: unset;
+      padding: calc(100px / var(--size-divisor)) calc(40px / var(--size-divisor)) calc(50px / var(--size-divisor)) calc(40px / var(--size-divisor));
+    }
+    
+    &__doughnut {
+      @include displayFlex();
+      flex-direction: row;
+      justify-content: center;
+      margin-bottom: calc(80px / var(--size-divisor));
+    }
+
+    &__banner {
+      margin: calc(60px / var(--size-divisor)) 0 calc(80px / var(--size-divisor)) 0;
+    }
+  }
+
+  &__myProjects {
+    @include displayFlex();
+    flex-direction: column;
+    padding: 0 calc(40px / var(--size-divisor)) calc(30px / var(--size-divisor));
+
+    h2 {
+      align-self: flex-end;
+      margin: 0 0 calc(50px / var(--size-divisor)) 0;
+    }
+
+    &__card {
+      align-self: center;
+      @include displayFlex();
+      flex-direction: row;
+    }
+  }
+
+}

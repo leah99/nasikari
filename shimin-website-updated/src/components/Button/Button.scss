@@ -1,0 +1,58 @@
+@import '../../styles/shared/index.scss';
+
+.button {
+    @include displayFlex();
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    cursor: pointer;
+
+    a, a:hover, a:focus, a:active {
+        text-decoration: none;
+        color: inherit;
+        padding: calc(10px / var(--size-divisor));
+    }
+
+    &--outline {
+        a {
+            @include displayFlex();
+            align-items: center;
+            justify-content: center;
+            min-width: calc(80px / var(--size-divisor));
+            border: 1.5px solid;
+            background-color: transparent;
+            
+            span {
+                width: calc(20px / var(--size-divisor));
+                height: calc(20px / var(--size-divisor));
+                margin-left: calc(10px / var(--size-divisor));
+                background-color: $darkGreen !important;
+                -webkit-mask: url("../../assets/arrow-right.svg") no-repeat center;
+                mask: url("../../assets/arrow-right.svg") no-repeat center;
+            }
+        }
+        a:hover {
+            border: 1.5px solid $OrangeYellow !important;
+            color: $OrangeYellow !important;
+
+            span {
+                background-color: $OrangeYellow !important;
+            }
+        }
+    }
+
+    &--fill {
+        a:hover {
+            background-color: $OrangeYellow !important;
+            color: $cream !important;
+        }
+    }
+
+    &--disabled {
+        a {
+            cursor: not-allowed !important;
+            pointer-events: none !important;
+            opacity: 0.5;
+        }
+    }
+}

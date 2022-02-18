@@ -1,0 +1,35 @@
+@import '../styles/shared/variables';
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Dawning+of+a+New+Day&family=Great+Vibes&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+h1 {
+	font-size: $header-font-size;
+    font-family: 'Spectral', serif;
+}
+
+h2,
+h3 {
+	font-size: $medium-font-size;
+}
+
+h4 { font-size: $default-font-size; }
+
+body,
+p {
+	font-size: $default-font-size;
+	font-family: 'Lora', serif;
+}
+
+small {
+	font-size: $small-font-size;
+}
+
+.signature {
+    font-size: $default-font-size;
+    font-family: 'Dawning of a New Day', cursive;
+}
+
+/** Other Font Family */
+// font-family: 'Cookie', cursive;
+// font-family: 'Great Vibes', cursive;
+// font-family: 'Lora', serif;
+// font-family: 'Spectral', serif;

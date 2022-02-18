@@ -1,0 +1,11 @@
+@import '../../styles/shared/index.scss';
+
+.scrollButton {
+    position: fixed;
+    width: calc(50px / var(--size-divisor));
+    height: calc(50px / var(--size-divisor));
+    right: calc(40px / var(--size-divisor));
+    bottom: calc(25px / var(--size-divisor));
+    z-index: 1;
+    cursor: pointer;
+}

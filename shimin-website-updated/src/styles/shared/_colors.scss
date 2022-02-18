@@ -1,0 +1,42 @@
+$black: #101010;
+$white: #FFFFFF;
+$cream: #EEE7DF;
+$brownYellow: #9D9989;
+$darkGrayOrange: #817165;
+$darkBrown: #706258;
+$ashPink: #F1CBB5;
+$salmon: #D87E6C;
+$dullPink: #D5ABA3;
+$OrangeYellow: #D89F65;
+$dullOrange: #DFC1A3;
+$yellowGreen: #EAEEDE;
+$dullGrayGreen: #636456;
+$lightGreen: #C2C3AC;
+$dullGreen: #576456;
+$darkGreen: #383F3B;
+$teaBlue: #6D8C8E;
+$dullBlue: #AEC8CA;
+
+
+/** Primary Color */
+$color-primary: $darkGrayOrange !default;
+
+/** Secondary Color*/
+$color-secondary: $dullGreen !default;
+
+/** Tertiary Color*/
+$color-tertiary: $OrangeYellow !default;
+$color-secondary-faded: $dullOrange !default;
+
+/** Background Color*/
+$color-body: $cream !default;
+
+/** Primary Label Color */
+$color-plabel: $darkGreen !default;
+$color-plabel-inverted: $yellowGreen !default;
+
+/** Tertiary Label Color */
+$color-tlabel: $darkGrayOrange !default;
+
+/** Secondary Label Color */
+$color-slabel: $brownYellow !default;

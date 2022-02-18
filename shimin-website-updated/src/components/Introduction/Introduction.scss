@@ -1,0 +1,50 @@
+@import '../../styles/shared/index.scss';
+
+.introduction {
+  margin-top: calc(25px / var(--size-divisor));
+  @include displayFlex();
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  &__container-left {
+    @include displayFlex();
+    flex-direction: column;
+    height: auto;
+    
+    &__image-left {
+      object-fit: cover;
+      width: calc(300px / var(--size-divisor));
+      height: calc(300px / var(--size-divisor));
+    }
+    &__image-right {
+      margin-top: calc(-150px / var(--size-divisor));
+      margin-left: calc(100px / var(--size-divisor));
+      object-fit: cover;
+      width: calc(250px / var(--size-divisor));
+      height: calc(250px / var(--size-divisor));
+    }
+  }
+
+  &__container-right {
+    @include displayFlex();
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: calc(60px / var(--size-divisor));
+
+    h2{
+      margin: 0 0 calc(30px / var(--size-divisor)) 0;
+    }
+
+    p {
+      margin: unset;
+      + p {
+        // margin-top: calc(5px / var(--size-divisor))
+      }
+    }
+    span {
+      margin-top: calc(30px / var(--size-divisor));
+    }
+  }
+}
