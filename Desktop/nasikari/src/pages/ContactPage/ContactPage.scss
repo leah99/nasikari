@@ -1,0 +1,75 @@
+@import '../../shared/index.scss';
+
+$mobile-max-width: 960px;
+
+$margin-right: 1em;
+$margin-right-mobile: 0.8em;
+
+$padding: 2em 10em 5em 10em;
+$padding-mobile: 2em 2em 10em 2em;
+
+$icon-width: 3em;
+$icon-width-mobile: 2em;
+
+.contact {
+    background-color: $color-body;
+    height: 100vh;
+    text-align: center;
+
+    &__container {
+        padding: $padding;
+
+        &__div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: auto;
+            width: 60%;
+    
+            &__icon {
+                width: $icon-width;
+                fill: $color-plabel;
+                margin-right: $margin-right;
+            }
+    
+            + .contact__container__div {
+                margin-top: 1em;
+            }
+    
+            a {
+                text-decoration: none;
+    
+                &:hover {
+                    color: $color-primary;
+                }
+            }
+    
+            h4 {
+                font-weight: 700 !important;
+                text-align: start;
+            }
+
+            div:nth-child(6) {
+                margin-bottom: 3em !important;
+            }
+        }
+        
+    }
+}
+
+@media only screen and (max-width: $mobile-max-width) {
+    .contact {
+        &__container {
+            padding: $padding-mobile;
+
+            &__div {
+                width: 100%;
+
+                &__icon {
+                    width: $icon-width-mobile;
+                    margin-right: $margin-right-mobile;
+                }
+            }
+        }
+    }    
+}

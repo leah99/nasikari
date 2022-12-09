@@ -1,0 +1,39 @@
+@import '../../shared/index.scss';
+
+$padding: 1em;
+$margin-left: 1em;
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: $color-primary;
+    padding: $padding;
+
+    &__description {
+        margin-left: $margin-left;
+        color: $color-plabel-inverted;
+    }
+
+    &__icon {
+        margin-left: auto;
+
+        &__facebook {
+            top: 50%;
+            width: 1.5em;
+            height: auto;
+            fill: $color-plabel-inverted;
+            cursor: pointer;
+
+            &:hover {
+                fill: $color-plabel;
+            }
+        }
+    }
+    
+    &__facebook {
+        max-width: 1.5em;
+        height: auto;
+        margin-left: auto;
+    }
+}

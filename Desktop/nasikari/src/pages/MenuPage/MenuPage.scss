@@ -1,0 +1,48 @@
+@import '../../shared/index.scss';
+
+$mobile-max-width: 960px;
+
+$padding: 0em 3em;
+$padding-mobile: 2em 2em;
+
+$icon-width: 3em;
+$icon-width-mobile: 1em;
+
+$translation-length: 150%;
+$translation-length-mobile: 200%;
+
+.menu {
+    background-color: $color-body;
+    height: 120vh;
+
+    &__header {
+        padding: $padding;
+        text-align: center;
+        border-bottom: 1px solid $color-plabel;
+
+        &__icon {
+            width: $icon-width;
+            height: auto;
+            float: left;
+            transform: translateY($translation-length);
+            fill: $color-plabel;
+            cursor: pointer;
+
+            &:hover {
+                fill: $color-primary;
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width: $mobile-max-width) {
+    .menu {
+        &__header {
+            &__icon {
+                transform: translateY($translation-length-mobile);
+                width: $icon-width-mobile;
+            }
+        }
+    }    
+}

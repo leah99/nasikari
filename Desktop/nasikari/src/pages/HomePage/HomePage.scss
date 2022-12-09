@@ -1,1 +1,116 @@
 @import '../../shared/index.scss';
+
+$mobile-max-width: 960px;
+
+$padding: 1em 3em;
+$padding-mobile: 2em 2em;
+$padding-button: 0.5em 2em;
+$border-radius-button: 2em;
+
+/** Buttons' margin from the text on top */
+$margin-top-button: 1.5em;
+$margin-top-button-mobile: 1em;
+
+/** Subsequent button margin left */
+$margin-left-button: 1em;
+
+.home {
+    background-color: $color-body;
+    
+    &__body {
+        padding: $padding;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+
+        &__container-left {
+            h1 {
+                padding: 0px;
+                margin: 0px;
+            }
+
+            h1:nth-child(1) {
+                -webkit-text-fill-color: transparent;
+                -webkit-text-stroke: 5px;
+            }
+
+            &__buttons {
+                margin-top: $margin-top-button;
+
+                button {
+                    padding: $padding-button;
+                    border-radius: $border-radius-button;
+                    cursor: pointer;
+
+                    + button {
+                        margin-left: $margin-left-button;
+                    }
+                }
+
+                button:nth-child(1) {
+                    background-color: $color-primary;
+                    color: $color-plabel-inverted;
+                    border: 3px solid $color-primary;
+
+                    &:hover {
+                        background-color: $color-plabel;
+                        border: 3px solid $color-plabel;
+                    }
+                }
+
+                button:nth-child(2) {
+                    background-color: transparent;
+                    color: $color-plabel;
+                    border: 3px solid $color-plabel;
+
+                    &:hover {
+                        color: $color-primary;
+                        border: 3px solid $color-primary;
+                    }
+                }
+            }
+        }
+
+        &__container-right {
+            animation-name: spin;
+            animation-duration: 50000ms;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+      
+            @keyframes spin {
+            from {
+                transform:rotate(0deg);
+            }
+            to {
+                transform:rotate(360deg);
+            }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $mobile-max-width) {
+    .home {
+        &__body {
+            flex-direction: column-reverse;
+            padding: 0;
+
+            &__container-right {
+                margin-top: -3em; // move SVG up due to an unknown gap
+                max-width: 90%;
+                overflow: hidden;
+            }
+
+            &__container-left {
+                text-align: center;
+                margin-top: -6em; // move text up due to an unknown gap
+                padding: $padding-mobile;
+
+                &__buttons {
+                    margin-top: $margin-top-button-mobile;
+                }
+            }
+        }
+    }
+}

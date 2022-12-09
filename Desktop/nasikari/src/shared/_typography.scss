@@ -1,14 +1,64 @@
+@import 'colors';
 @import url('https://fonts.googleapis.com/css2?family=Corben:wght@400;700&family=Nobile&display=swap');
 
-h1, h2, h3, h4 {
+$mobile-max-width: 960px;
+
+h1, h2, h3, h4, ul, li, button, a {
     font-family: 'Corben', cursive;
     font-weight: 700;
+    color: $color-plabel;
+}
+
+h1 {
+    font-size: 7em;
+
+    @media only screen and (max-width: $mobile-max-width) {
+        font-size: 2.5em;
+    }
+}
+
+h2 {
+    font-size: 3em;
+
+    @media only screen and (max-width: $mobile-max-width) {
+        font-size: 1.2em;
+    }
+}
+
+h3 {
+    font-size: 2em;
+
+    @media only screen and (max-width: $mobile-max-width) {
+        font-size: 0.8em;
+    }
 }
 
 h4 {
+    font-size: 1em;
     font-weight: 400 !important;
+
+    @media only screen and (max-width: $mobile-max-width) {
+        font-size: 0.8em;
+    }
 }
 
-p, span, ul, li {
+button, a {
+    font-size: 1em;
+
+    @media only screen and (max-width: $mobile-max-width) {
+        font-size: 0.8em;
+    }
+}
+
+p, span {
     font-family: 'Nobile', sans-serif;
+    color: $color-plabel;
+}
+
+p {
+    font-size: 1.5em;
+
+    @media only screen and (max-width: $mobile-max-width) {
+        font-size: 1em;
+    }
 }

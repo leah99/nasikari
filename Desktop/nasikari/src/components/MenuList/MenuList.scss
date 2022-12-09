@@ -1,0 +1,15 @@
+@import '../../shared/index.scss';
+
+$padding: 1em 2em;
+
+.menu-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: $padding;
+
+    &__container-right {
+        align-self: flex-start;
+        min-width: 80px;
+    }
+}

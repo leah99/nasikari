@@ -1,0 +1,213 @@
+@import '../../shared/index.scss';
+
+$mobile-max-width: 960px;
+$padding: 2em 3em;
+$padding-mobile: 2em 2em;
+
+/** Margin between each menu list item **/
+$navbar-menu-margin: 5em;
+$navbar-menu-padding-mobile: 2em;
+
+/** Hover animation line height **/
+$text-underline-height: 4px;
+$text-underline-offset: -3px;
+
+$text-font-size: 1em;
+
+/** Logo size **/
+$logo-size: 4.5em;
+$logo-size-mobile: 3.5em;
+
+/** Padding to align the logo to the hamburger **/
+$padding-align-hamburger: 1em 2em;
+
+/** Hamburger icon **/
+$hamburger-width: 25px;
+$hamburger-height: 3px;
+$hamburger-margin: 5px;
+$hamburger-translate: 8px;
+$hamburger-translate-degree: 45deg;
+$hamburger-translate-reverse: -8px;
+$hamburger-translate-degree-reverse: -45deg;
+
+/** Overlay for menu--open **/
+$primary-color-overlay: rgba(0, 0, 0, 0.50);
+
+.navbar {
+  &--show {
+    background: $color-body;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+  }
+
+  &__menu {
+    &--close {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: $padding;
+      // box-shadow: 10px 1px 0px 0px $color-plabel;
+
+      &__logo {
+        max-width: $logo-size;
+        height: auto;
+        margin-right: auto;
+        cursor: pointer;
+
+        &:hover {
+          animation-name: spin;
+          animation-duration: 5000ms;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+        }
+
+        @keyframes spin {
+          from {
+              transform:rotate(0deg);
+          }
+          to {
+              transform:rotate(360deg);
+          }
+        }
+      }
+
+      li {
+        list-style: none;
+        text-decoration: none;
+        display: inline-block; //underline animation
+        position: relative; //underline animation
+        color: $color-plabel;
+
+        /* Underline Animation */
+        //:: is the newer format intended to distinguish pseudo content from pseudo-selectors; however IE8 do not support
+        &::after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          transform: scaleX(0);
+          height: $text-underline-height;
+          bottom: $text-underline-offset;
+          left: 0;
+          background-color: $color-primary;
+          transform-origin: bottom right;
+          transition: transform 0.25s ease-out;
+        }
+
+        &:hover {
+          color: $color-primary;
+          cursor: pointer;
+
+          /* Underline Animation */
+          &::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+          }
+        }
+  
+        + li {
+          margin-left: $navbar-menu-margin;
+        }
+      }
+    }
+  }
+
+  &__hamburger {
+    &--open {
+      padding: $padding-mobile;
+      cursor: pointer;
+
+      .navbar__hamburger__bar:nth-child(1) {
+        transform: translateY($hamburger-translate) rotate($hamburger-translate-degree)
+      }
+      .navbar__hamburger__bar:nth-child(2) {
+        opacity: 0;
+      }
+      .navbar__hamburger__bar:nth-child(3) {
+        transform: translateY($hamburger-translate-reverse) rotate($hamburger-translate-degree-reverse)
+      }
+    }
+
+    &--close {
+      padding: $padding-mobile;
+      cursor: pointer;
+    }
+
+    &__bar {
+      display: block;
+      width: $hamburger-width;
+      height: $hamburger-height;
+      margin: $hamburger-margin auto;
+      -webkit-transition: all 0.3s ease-in-out;
+      background-color: $color-plabel;
+    }
+  }
+}
+
+@media only screen and (max-width: $mobile-max-width) {
+  .navbar {
+    &__menu--close {
+      padding: $padding-align-hamburger;
+      // box-shadow: unset;
+
+      &__logo {
+        max-width: $logo-size-mobile;
+        margin-right: unset;
+      }
+    }
+
+    &__menu--open {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100vh;
+      background: $primary-color-overlay;
+      transition: all 0.3s ease-in;
+      z-index: 3;
+
+      &__logo {
+        position: absolute;
+        right: 0;
+      }
+
+      ul {
+        position: absolute;
+        right: 0;
+        width: 70%;
+        height: 100vh;
+        margin: auto;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: $color-primary;
+
+        li {
+          list-style: none;
+          text-decoration: none;
+          font-size: $text-font-size;
+          padding: $navbar-menu-padding-mobile;
+  
+          &:hover {
+            background-color: $color-plabel;
+            color: $color-primary;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    &__menu--close {
+      li {
+        display: none;
+      }
+    }
+
+    /** Default */
+    &__hamburger--open, &__hamburger--close {
+      position: absolute;
+      z-index: 4;
+    }
+  }
+}
