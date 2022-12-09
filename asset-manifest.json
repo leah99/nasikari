@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/nasikari/static/css/main.47834ce5.css",
-    "main.js": "/nasikari/static/js/main.33b95850.js",
+    "main.js": "/nasikari/static/js/main.aca63601.js",
     "static/js/496.c05700c0.chunk.js": "/nasikari/static/js/496.c05700c0.chunk.js",
     "static/media/Nasi-Kari.svg": "/nasikari/static/media/Nasi-Kari.152530d88f9d2e78452cbeb01ce5c2cc.svg",
     "static/media/Logo.svg": "/nasikari/static/media/Logo.f1803f73ff5d0a46c523ce0b1e9622b2.svg",
@@ -14,11 +14,11 @@
     "index.html": "/nasikari/index.html",
     "static/media/Copyright.svg": "/nasikari/static/media/Copyright.a0244141baccccebfb57eb5860bcec01.svg",
     "main.47834ce5.css.map": "/nasikari/static/css/main.47834ce5.css.map",
-    "main.33b95850.js.map": "/nasikari/static/js/main.33b95850.js.map",
+    "main.aca63601.js.map": "/nasikari/static/js/main.aca63601.js.map",
     "496.c05700c0.chunk.js.map": "/nasikari/static/js/496.c05700c0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.47834ce5.css",
-    "static/js/main.33b95850.js"
+    "static/js/main.aca63601.js"
   ]
 }
